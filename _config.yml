@@ -50,7 +50,7 @@ prose:
         field:
           element: text
           label: 'A Side Image'
-          help: 'Address for the A Side Image'
+          help: 'Url for the A Side Image. To upload an image: Click on the edit tab; Click the "Insert Image" button in the toolbar and drag and drop an image on to the icon; Click insert - this will upload the image, you can then grab the image url (everything after "{{site.baseurl}}"), this is what you want to paste here. You can then delete that text from the editor. Sorry that‘s a little convoluted.'
           placeholder: '/media/bg.png'
           type: text
     _posts/static:
