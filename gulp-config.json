@@ -1,0 +1,32 @@
+{
+  "distRoot": "./dist",
+  "js": {
+    "src": "./src/js/app-main.js",
+    "toWatch": [
+      "src/js/**",
+      "!src/js/vendor/**"
+    ],
+    "outputFileName": "bundle.js",
+    "outputDir": "./dist/js"
+  },
+  "jekyll": {
+    "src": "./src/index.html",
+    "toWatch": [
+      "_site"
+    ],
+    "outputFileName": "index.html",
+    "outputDir": "./dist/"
+  },
+  "scss": {
+    "src": "./src/scss/main.scss",
+    "toWatch": [
+      "src/scss/**"
+    ],
+    "outputFileName": "main.css",
+    "outputDir": "./dist/css"
+  },
+  "public": {
+    "src": "./src/public/**",
+    "outputDir": "./dist/"
+  }
+}

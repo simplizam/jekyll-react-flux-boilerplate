@@ -17,6 +17,20 @@ url: "http://tomjamesallen.github.io/jekyll-testing" # the base hostname & proto
 twitter_username: jekyllrb
 github_username:  jekyll
 
+exclude: [
+  "src",
+  "node_modules",
+  "tasks",
+  "gulp-config.json",
+  "gulpfile.js",
+  "package.json",
+  "README.md",
+  "Gemfile",
+  "Gemfile.lock",
+  ".babelrc",
+  ".eslintrc.json"
+]
+
 # Build settings
 markdown: kramdown
 
