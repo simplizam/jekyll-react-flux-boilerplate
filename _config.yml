@@ -46,6 +46,13 @@ prose:
               value: "apples"
             - name: "Bananas"
               value: "bananas"
+      - name: 'a-side-img'
+        field:
+          element: text
+          label: 'A Side Image'
+          help: 'Address for the A Side Image'
+          placeholder: '/media/bg.png'
+          type: text
     _posts/static:
       - name: "layout"
         field:
