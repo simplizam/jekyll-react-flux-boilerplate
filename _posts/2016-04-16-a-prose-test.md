@@ -5,4 +5,4 @@ published: true
 ---
 ## A New Post
 
-Just creating a page in [prose.io](prose.io).
+Just creating a page in [prose.io](http://prose.io).
