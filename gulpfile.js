@@ -69,6 +69,7 @@ gulp.task('build', function(callback) {
   runSequence(
     'clean',
     'set-env:production',
+    ['compile:js', 'compile:scss'],
     'compile:jekyll',
     callback
   );
