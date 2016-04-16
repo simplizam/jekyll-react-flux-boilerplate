@@ -10,15 +10,6 @@
     "outputFileName": "bundle.js",
     "outputDir": "./dist/js"
   },
-  "jekyll": {
-    "src": "./src/index.html",
-    "toWatch": [
-      "_site",
-      "_site/**"
-    ],
-    "outputFileName": "index.html",
-    "outputDir": "./_site/"
-  },
   "scss": {
     "src": "./src/scss/main.scss",
     "toWatch": [

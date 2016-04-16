@@ -47,6 +47,33 @@ gulp.task('clean', function () {
   return del([distRoot]);
 });
 
+// Server task (takes care of express and live reload).
+gulp.task('server', require('./server.js')(gulp));
 
 
-gulp.task('server', require('./server.js')(gulp))
+// Default task.
+gulp.task('default', function(callback) {
+  runSequence(
+    'clean',
+    'set-env:development',
+    ['compile:watch:jshint', 'watch:js', 'watch:scss'],
+    'compile:jekyll',
+    'server',
+    'watch:jekyll',
+    callback
+  );
+});
+
+// Alias for production build.
+gulp.task('build', function(callback) {
+  runSequence(
+    'clean',
+    'set-env:production',
+    'compile:jekyll',
+    callback
+  );
+});
+
+
+
+
