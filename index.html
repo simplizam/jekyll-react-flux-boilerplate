@@ -4,31 +4,16 @@ layout: default
 
 <div class="home">
 
-  <h1>test!</h1>
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <img src="{{ post["a-side-img"] }}" alt="">
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
   <script>
 
-    var players = [];
+    var posts = [];
 
     {% for post in site.posts %}
 
-      players.push({
+      posts.push({
+        title: "{{ post.title }}",
+        content: "{{ post.content | replace:'"','\"' | replace:"
+", "\n" }}",
         url: "{{ post.url }}",
         img: "{{ post["a-side-img"] }}"
       });
@@ -37,6 +22,8 @@ layout: default
 
   </script>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
+
+
+
+

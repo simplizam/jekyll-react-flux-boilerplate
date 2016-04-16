@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
+// import { markdown } from 'markdown'
+
 import ConnectToStores from '../mixins/ConnectToStores'
 import AppStore from '../stores/AppStore'
 import AppActions from '../actions/AppActions'
@@ -35,6 +37,20 @@ var App = React.createClass({
 
   mixins: [ConnectToStores([AppStore], getState)],
 
+  renderPostList() {
+    let { posts } = this.state.appState
+
+    return posts.map((post, i) => {
+      return (
+        <div key={i}>
+          <h2>Posts</h2>
+          <h3>post.title</h3>
+          <div dangerouslySetInnerHTML={{__html: post.content}}/>
+        </div>
+      )
+    })
+  },
+
   /**
    * Render the App component.
    * @return {object}
@@ -51,6 +67,8 @@ var App = React.createClass({
         <div>
           <button onClick={this._onClickExample}>Action example</button>
         </div>
+
+        <div>{this.renderPostList()}</div>
 
         {/* <ReactiveComponent /> */}
       </div>

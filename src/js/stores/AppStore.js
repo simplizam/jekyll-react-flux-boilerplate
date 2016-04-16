@@ -15,13 +15,13 @@ const CHANGE_EVENT = 'change'
 
 function getInitialState() {
   return {
-    dataReady: true
+    dataReady: true,
+    posts: window.posts
   }
 }
 
 // Create state var and set to initial state.
 var state = getInitialState()
-
 
 /**
  * Create and export the AppAppStore.

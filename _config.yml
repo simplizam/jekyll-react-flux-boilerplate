@@ -6,16 +6,14 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Your awesome title
+title: Jekyll + React Boilerplate
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://tomjamesallen.github.io/jekyll-testing" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://example.com" # the base hostname & protocol for your site
 
 exclude: [
   "src",
@@ -61,13 +59,6 @@ prose:
               value: "apples"
             - name: "Bananas"
               value: "bananas"
-      - name: 'a-side-img'
-        field:
-          element: text
-          label: 'A Side Image'
-          help: 'Url for the A Side Image. To upload an image: Click on the edit tab; Click the "Insert Image" button in the toolbar and drag and drop an image on to the icon; Click insert - this will upload the image, you can then grab the image url (everything after "{{site.baseurl}}"), this is what you want to paste here. You can then delete that text from the editor. Sorry that‘s a little convoluted.'
-          placeholder: '/media/bg.png'
-          type: text
     _posts/static:
       - name: "layout"
         field:
