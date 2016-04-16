@@ -6,7 +6,6 @@ var watchify = require('watchify');
 var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var streamify = require('gulp-streamify');
-var connect = require('gulp-connect');
 var envify = require('envify/custom');
 var gulpif = require('gulp-if');
 var size = require('gulp-size');
@@ -70,7 +69,6 @@ function scripts(watch) {
       .pipe(source(config.outputFileName))
       .pipe(streamify(gulpif(ENV === 'production', uglify())))
       .pipe(gulp.dest(config.outputDir))
-      .pipe(connect.reload())
       .pipe(size());
       
     return stream;

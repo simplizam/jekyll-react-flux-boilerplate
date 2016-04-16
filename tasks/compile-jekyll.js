@@ -11,13 +11,19 @@ gulp.task('compile:jekyll', function (callback) {
 });
 
 gulp.task('jekyll-build--watch', function () {
-  var shellCommand = 'jekyll build --watch';
+  console.log('watch')
+  var shellCommand = 'jekyll build --watch --incremental';
   return gulp
     .src('../')
     .pipe(run(shellCommand));
 });
 
-gulp.task('watch:jekyll', ['jekyll-build--watch'], function () {
-  
-  // return gulp.watch([config.toWatch], ['compile:html']);
+gulp.task('watch:jekyll', function () {
+  gulp.run('jekyll-build--watch');
+  console.log('watchinggngngng')
+  return gulp.watch(config.toWatch, function () {
+    return gulp
+      .src(config.toWatch)
+      .pipe(connect.reload());
+  });
 });

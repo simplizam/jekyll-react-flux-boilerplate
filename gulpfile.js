@@ -47,39 +47,6 @@ gulp.task('clean', function () {
   return del([distRoot]);
 });
 
-// Compile static assets.
-gulp.task('compile-assets', function (callback) {
-  runSequence(['compile:jshint', 'compile:js', 'compile:public', 'compile:scss'], 'compile:jekyll', callback)
-});
 
-// Build tasks.
-gulp.task('build:development', function (callback) {
-  runSequence('clean', 'set-env:development', 'compile-assets', callback);
-});
-gulp.task('build:staging', function (callback) {
-  runSequence('clean', 'set-env:staging', 'compile-assets', callback);
-});
-gulp.task('build:production', function (callback) {
-  runSequence('clean', 'set-env:production', 'compile-assets', callback);
-});
 
-// Alias for production build.
-gulp.task('build', ['build:production']);
-
-// Watch task (will also do initial build).
-gulp.task('watch', ['compile:watch:jshint', 'watch:js', 'compile:jekyll', 'watch:public', 'watch:scss']);
-
-// Fake live environement.
-gulp.task('faux-staging', function(callback) {
-  runSequence('clean', 'set-env:staging', 'watch', ['dev-server'], callback);
-});
-
-// Fake live environement.
-gulp.task('faux-production', function(callback) {
-  runSequence('clean', 'set-env:production', 'watch', ['dev-server'], callback);
-});
-
-// Default task.
-gulp.task('default', function(callback) {
-  runSequence('clean', 'set-env:development', 'watch', ['dev-server'], callback);
-});
+gulp.task('server', require('./server.js')(gulp))
