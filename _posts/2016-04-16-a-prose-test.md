@@ -1,7 +1,7 @@
 ---
 layout: blog
 tags: null
-published: false
+published: true
 ---
 ## A New Post
 
