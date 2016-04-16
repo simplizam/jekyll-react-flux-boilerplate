@@ -19,11 +19,11 @@ To install, simply download the repository (or git clone) and run `npm install` 
 
 ### The directories
 
-The directory setup is a little convoluted, on account of Jekyll liking all of it's src files to be in the root directory, and the two step build process (gulp / jekyll).
+The directory setup is a little convoluted, on account of Jekyll liking all of its src files to be in the root directory, and the two step build process (gulp / jekyll).
 
 * `/src` contains the src JS and Scss files, the ones that you'll want to work on.
 * `/dist` contains the compiled JS.
-* `/_site` contains the final, compiled site - Gulp runs first, so `/src` is compiled into `/dist` and then Jekyll picks up both of those directories, along with all its other assets, and compiles the lot into `/_site`.
+* `/_site` contains the final, compiled site - Gulp runs first, so `/src` is compiled into `/dist` and then Jekyll picks up dist, along with all its other assets, and compiles the lot into `/_site`.
 
 Inspired by [https://robwise.github.io/blog/jekyll-and-gulp](https://robwise.github.io/blog/jekyll-and-gulp).
 
