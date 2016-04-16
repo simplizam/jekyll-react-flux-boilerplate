@@ -28,7 +28,8 @@ exclude: [
   "Gemfile",
   "Gemfile.lock",
   ".babelrc",
-  ".eslintrc.json"
+  ".eslintrc.json",
+  "server.js"
 ]
 
 # Build settings

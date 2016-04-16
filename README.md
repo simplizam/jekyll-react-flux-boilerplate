@@ -1,39 +1,30 @@
-# React / Flux Boilerplate
+# Jekyll + React / Flux Boilerplate
 
-A starting point for React / Flux projects, inspired by the [flux examples][flux-examples].
+A starting point for building single page React apps on top of Jekyll, or for adding a little bit of React on top of a standard Jekyll site.
 
-Please note, this setup only provides a client-side implementation of react/flux. This is a very lightweight implementation that has suited my needs for small client-side projects. If you need a fuller feature set, or support for isomorphic apps then I would recommend [redux][redux] or [fluxible][fluxible] depending on your needs.
+## Why?
 
-This boilerplate provides the following:
+Jekyll sites are free to host with Github Pages, provide basic compilation of site content, and via the wonderful editor [Prose.io](http://prose.io/) Markdown files can be edited online with no need for clients to dig into the code.
 
-* Default wiring for a store, actions and a dispatcher
-* Default components
-* Configured [React-router][react-router]
-* Scss boilerplate, following BEM and ITCSS architecture
-* [react-component-width-mixin][react-component-width-mixin]
-* Gulp build scripts for HTML, SCSS and JS
-* Watchify configured for fast rebuilding of JS
-* Dev server with livereload
+## What should I use this for?
+
+As of yet I haven't dug into matching the React router to the content built by Jekyll - I think this _could_ work quite well, but I haven't tested it yet. Feel free to fork away and give it a go. So for now, I see two ways of using this:
+
+1. A basic static site, but with React rendering dynamic elements, such as sound or video players etc. Jekyll handles serving up the different pages, React is an add-on.
+2. A single page app, where the React Router uses hash-history, and Jekyll serves up data. Jekyll is pretty good for dynamically rendering JS to the page, based on the content or meta data from posts (or any other content), so you can essentially create a basic JS api that the React App can load in. It's not the prettiest way to create an API, but it works.
 
 ## Getting started
-Download or clone the repo and run `npm install` (you will also need gulp [installed globally][gulp]). To start the server with livereload just run `gulp`.
 
-### Available gulp tasks
+To install, simply download the repository (or git clone) and run `npm install` (you will also need gulp [installed globally][gulp]). Once that's done its thing, run `gulp` to start the development watch task; this will start the development server, and watch all assets for changes. You can open the site in your browser at `http://localhost:8899`. Once you're ready to push your changes to the server, run `gulp build` to compile all the site assets into `/_site`.
 
-* `gulp` - default task sets environment to development, starts the dev server, compiles assets, and watches for changes
-* `gulp build` or `gulp build:production` - build only, with environment set to production
-* `gulp faux-production` - same as default task, but with the environment set to production
-* `gulp build:development` - build only, with environment set to development
+### The directories
 
-See `gulpfile.js` for more detail on which sub-tasks each top level task is running.
+The directory setup is a little convoluted, on account of Jekyll liking all of it's src files to be in the root directory, and the two step build process (gulp / jekyll).
 
-## Deployment
+* `/src` contains the src JS and Scss files, the ones that you'll want to work on.
+* `/dist` contains the compiled JS.
+* `/_site` contains the final, compiled site - Gulp runs first, so `/src` is compiled into `/dist` and then Jekyll picks up both of those directories, along with all its other assets, and compiles the lot into `/_site`.
 
-Running `gulp build` will run all the build scripts and save the output to `/dist`. This entire folder can be deployed to your production server. These are static assets only, so they can be deployed to a static file server such as amazon s3, or github pages.
+Inspired by [https://robwise.github.io/blog/jekyll-and-gulp](https://robwise.github.io/blog/jekyll-and-gulp).
 
-[react-router]: https://github.com/reactjs/react-router
-[flux-examples]: https://github.com/facebook/flux/tree/master/examples
 [gulp]: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-[redux]: http://redux.js.org/
-[fluxible]: http://fluxible.io/
-[react-component-width-mixin]: https://www.npmjs.com/package/react-component-width-mixin
