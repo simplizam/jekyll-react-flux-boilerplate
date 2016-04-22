@@ -15,7 +15,7 @@ As of yet I haven't dug into matching the React router to the content built by J
 
 ## Getting started
 
-To install, simply download the repository (or git clone) and run `npm install` (you will also need gulp [installed globally][gulp]). Once that's done its thing, run `gulp` to start the development watch task; this will start the development server, and watch all assets for changes. You can open the site in your browser at `http://localhost:8899`. Once you're ready to push your changes to the server, run `gulp build` to compile all the site assets into `/_site`.
+To install, simply download the repository (or git clone) and run `npm install` (you will also need gulp [installed globally][gulp]). You will also need to run `bundle install` to install the jekyll ruby stuff. Once that's done its thing, run `gulp` to start the development watch task; this will start the development server, and watch all assets for changes. You can open the site in your browser at `http://localhost:8899`. Once you're ready to push your changes to the server, run `gulp build` to compile all the site assets into `/_site`.
 
 ### The directories
 
